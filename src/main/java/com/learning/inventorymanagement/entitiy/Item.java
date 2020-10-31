@@ -24,6 +24,10 @@ public class Item {
 	@Column
 	private int price;
 
+	public Item() {
+		
+	}
+	
 	public Item(long id, String name, String description, int quantity, int price) {
 		super();
 		this.id = id;
