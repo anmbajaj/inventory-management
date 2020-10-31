@@ -28,9 +28,8 @@ public class Item {
 		
 	}
 	
-	public Item(long id, String name, String description, int quantity, int price) {
+	public Item(String name, String description, int quantity, int price) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.quantity = quantity;

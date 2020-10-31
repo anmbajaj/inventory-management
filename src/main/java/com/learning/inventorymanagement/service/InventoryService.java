@@ -22,4 +22,26 @@ public class InventoryService {
 	public Optional<Item> getItemById(long itemId){
 		return itemRepository.findById(itemId);
 	}
+	
+	public void addItem(Item item){
+		itemRepository.save(item);
+	}
+	
+	public void updateItemPrice(long itemId, int price) {
+		Optional<Item> item = getItemById(itemId);
+		Item itemToBeUpdated = item.get();
+		itemToBeUpdated.setPrice(price);
+		itemRepository.save(itemToBeUpdated);
+	}
+	
+	public void deleteAllRecords() {
+		itemRepository.deleteAll();
+	}
+	
+	public void deleteItem(long itemId) {
+		Optional<Item> item = getItemById(itemId);
+		Item itemToBeDeleted = item.get();
+		itemRepository.delete(itemToBeDeleted);
+	}
+	
 }
