@@ -1,6 +1,9 @@
 package com.learning.inventorymanagement.entitiy;
 
+import java.util.Map;
+
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,17 +26,21 @@ public class Item {
 	
 	@Column
 	private int price;
+	
+	@ElementCollection
+	private Map<String, String> additionalParams;
 
 	public Item() {
 		
 	}
 	
-	public Item(String name, String description, int quantity, int price) {
+	public Item(String name, String description, int quantity, int price, Map<String, String> additionalParams) {
 		super();
 		this.name = name;
 		this.description = description;
 		this.quantity = quantity;
 		this.price = price;
+		this.additionalParams = additionalParams;
 	}
 
 	public long getId() {
@@ -74,5 +81,13 @@ public class Item {
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public Map<String, String> getAdditionalParams() {
+		return additionalParams;
+	}
+
+	public void setAdditionalParams(Map<String, String> additionalParams) {
+		this.additionalParams = additionalParams;
 	}
 }

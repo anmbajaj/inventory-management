@@ -1,19 +1,22 @@
 package com.learning.inventorymanagement.controller.dto;
 
+import java.util.Map;
+
 public class ItemDTO {
 	private long id;
 	private String name;
 	private String description;
 	private int quantity;
 	private int price;
+	private Map<String, String> additionalParams;
 	
-	public ItemDTO(long id, String name, String description, int quantity, int price) {
+	public ItemDTO(String name, String description, int quantity, int price, Map<String, String> additionalParams) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.quantity = quantity;
 		this.price = price;
+		this.additionalParams = additionalParams;
 	}
 	
 	public long getId() {
@@ -45,5 +48,13 @@ public class ItemDTO {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public Map<String, String> getAdditionalParams() {
+		return additionalParams;
+	}
+
+	public void setAdditionalParams(Map<String, String> additionalParams) {
+		this.additionalParams = additionalParams;
 	}
 }
