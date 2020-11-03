@@ -10,6 +10,10 @@ public class ItemDTO {
 	private int price;
 	private Map<String, String> additionalParams;
 	
+	public ItemDTO() {
+		
+	}
+	
 	public ItemDTO(String name, String description, int quantity, int price, Map<String, String> additionalParams) {
 		super();
 		this.name = name;
